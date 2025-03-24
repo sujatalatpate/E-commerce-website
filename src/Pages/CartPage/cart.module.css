@@ -1,0 +1,166 @@
+.CartDetails {
+    position: fixed;
+    right: 0;
+    width: 300px; /* Set the width of the sidebar */
+    height: 100vh; /* Take full height */
+    background-color: white; /* Background color */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Optional, for a slight shadow effect */
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px; /* Add padding for spacing inside */
+    z-index: 1000; /* Ensure it's on top of other content */
+    overflow: hidden; /* Prevent scrolling */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+ /* Top Section */
+.top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 0px;
+    padding: 20px 30px;
+    background-color: #f1f1f1; /* Soft background */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    border-radius: 10px;
+  }
+  
+  .top img {
+    width: 30px; /* Increased for better visibility */
+    height: 30px;
+    margin-top: 10px; /* More space between image and top */
+    transition: transform 0.3s ease-in-out; /* Hover effect */
+  }
+  
+  .top img:hover {
+    transform: scale(1.1); /* Hover zoom effect */
+  }
+  
+  .top p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333; /* Darker text for better readability */
+    margin: 0;
+  }
+  
+  /* Items Section */
+  .items {
+    display: grid;
+    grid-template-columns: 80px auto 60px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .items:hover {
+    background-color: #f9f9f9; /* Subtle hover background */
+  }
+  
+  /* Count Section */
+  .count {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .incCount,
+  .decCount {
+    width: 30px;
+    height: 30px;
+    font-weight: bolder;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .incCount {
+    background-color: #f1c0f2; /* Light pink */
+  }
+  
+  .decCount {
+    background-color: #c8f7c8; /* Soft green */
+  }
+  
+  .incCount:hover {
+    background-color: #f4a7f8; /* Darker pink on hover */
+  }
+  
+  .decCount:hover {
+    background-color: #a7f4a7; /* Darker green on hover */
+  }
+  
+  .counter {
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 8px;
+    background-color: #dedcdc;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .counter:hover {
+    background-color: #d1d1d1; /* Slight hover effect */
+  }
+  
+  /* Cart Image */
+  .cartImage img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .cartImage img:hover {
+    transform: scale(1.1); /* Hover zoom effect */
+  }
+  
+ .total {
+    position: fixed; /* Fixes the total section at the bottom */
+    bottom: 0; /* Aligns it to the bottom of the screen */
+    width: 22%; /* Makes it span the full width of the screen */
+    background-color: #fff; /* White background */
+    padding: 10px 20px; /* Adds padding */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Adds shadow for separation */
+    z-index: 1000; /* Ensures it stays above other content */
+  }
+
+ .bottom {
+    padding: 10px;
+    background-color: #f7f7f7; /* Optional styling for the bottom section */
+  }
+  
+  .price {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  
+  .btn button {
+    padding: 10px 20px;
+    background-color: #ff5c5c; /* Optional button styling */
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    border-radius: 10px;
+  }
+  
+  .btn button:hover {
+    background-color: #ff3d3d; /* Optional hover effect */
+  }
+  .container
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }

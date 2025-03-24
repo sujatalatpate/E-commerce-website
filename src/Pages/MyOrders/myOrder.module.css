@@ -1,0 +1,28 @@
+.orderContainer
+{
+    margin-top: 100px;
+}
+.items {
+    display: grid;
+    width: 300px;
+    grid-template-columns: 80px auto ;
+    margin-left: 500px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  .price {
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 8px;
+    background-color: #dedcdc;
+    color: #333;
+    font-weight: bold;
+    margin-left: 90px;
+  }
