@@ -1,3 +1,4 @@
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import style from "./product.module.css";
@@ -10,17 +11,25 @@ function Product() {
     handleProductClick,
     handleAddToCart,
     setAddedProductCount,
-    addedProductCount
+    addedProductCount,
+    setShowCart,
+    isCartVisible,
+        setIsCartVisible,
   } = useProduct();
-
+  const { categoryName } = useParams();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   
-  // Manage the added products to prevent adding the same one twice
   const [addedProducts, setAddedProducts] = useState(new Set());
   
-  // We will manage the plus/check toggle for each product
   const [productIcons, setProductIcons] = useState({});
+
+  const filteredProducts = categoryName === "all" || !categoryName
+  ? products
+  : products.filter(
+      (product) =>
+        product.category.name.toLowerCase() === categoryName.toLowerCase()
+    );
 
   useEffect(() => {
     axios
@@ -35,21 +44,21 @@ function Product() {
       });
   }, []);
 
-  // Toggle plus/check for a specific product
   const togglePlusCheck = (productId) => {
     setProductIcons((prev) => ({
       ...prev,
-      [productId]: !prev[productId], // Toggle the current icon for the product
+      [productId]: !prev[productId], 
     }));
   };
 
-  // Handle adding a product to the cart
+  
   const handleProductAdd = (product) => {
     if (!addedProducts.has(product.id)) {
       handleAddToCart(product);
-      setAddedProducts((prev) => new Set(prev).add(product.id)); // Add product ID to the set
-      togglePlusCheck(product.id); // Toggle the icon when adding to cart
+      setAddedProducts((prev) => new Set(prev).add(product.id)); 
+      togglePlusCheck(product.id); 
       setAddedProductCount(addedProductCount + 1);
+    setIsCartVisible(true);
     }
     console.log("Product clicked:", product);
   };
@@ -57,7 +66,7 @@ function Product() {
   return (
     <>
       <div className={style.imageGallery}>
-        {products.map((product) => (
+        {filteredProducts.map((product) => (
           <div key={product.id} className={style.productContainer}>
             <div className={style.imageItem}>
               <div onClick={() => handleProductClick(product)}>
@@ -68,11 +77,10 @@ function Product() {
                 />
               </div>
 
-              {/* Add to Cart button with plus/check toggle */}
               <button
                 className={style.add}
-                onClick={() => handleProductAdd(product)} // Use the new handleProductAdd
-                disabled={addedProducts.has(product.id)} // Disable the button if the product is already added
+                onClick={() => handleProductAdd(product)} 
+                disabled={addedProducts.has(product.id)} 
               >
                 <span className={style.icon}>
                   {productIcons[product.id] ? (

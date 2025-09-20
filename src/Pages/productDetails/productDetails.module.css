@@ -1,27 +1,16 @@
-/* .ProductDetails
-{
-    width: 300px;
-    height: 500px;
-    
-}
-.ProductDetails img
-{
-    width: 280px;
-    height: 300px;
-    border-radius: 10px;
-} */
+
 .ProductDetails {
     position: fixed;
     right: 0;
-    width: 300px; /* Set the width of the sidebar */
-    height: 100vh; /* Take full height */
-    background-color: white; /* Background color */
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Optional, for a slight shadow effect */
+    width: 300px; 
+    height: 100vh; 
+    background-color: white; 
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); 
     border: 1px solid black;
     border-radius: 10px;
-    padding: 20px; /* Add padding for spacing inside */
-    z-index: 4000; /* Ensure it's on top of other content */
-    overflow: hidden; /* Prevent scrolling */
+    padding: 20px; 
+    z-index: 4000; 
+    overflow: hidden; 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -49,30 +38,26 @@
     font-size: 16px;
   }
   
-/* Image Style in Sidebar */
 .ProductDetails img {
-    max-width: 100%;  /* Ensure images don't exceed the container width */
-    height: auto;  /* Maintain image aspect ratio */
-    margin: 10px 0;  /* Add margin around images */
+    max-width: 100%;  
+    height: auto;  
+    margin: 10px 0;  
 }
 
-/* Paragraph Style in Sidebar */
 .ProductDetails p {
-    margin: 5px 0;  /* Add margin between paragraphs */
-    font-size: 16px;  /* Set font size for text */
+    margin: 5px 0;  
+    font-size: 16px;  
 }
 
-/* Main Content Below Navbar and Sidebar */
 .main-content {
-    margin-right: 320px;  /* Give space for the fixed sidebar */
-    padding-top: 13vh;  /* Make space for the fixed navbar */
-    overflow-y: auto;  /* Allow the main content to be scrollable */
-    height: 100vh;  /* Full viewport height */
-    padding-left: 20px;  /* Optional: Padding for the main content */
-    padding-right: 20px;  /* Optional: Padding for the main content */
+    margin-right: 320px;  
+    padding-top: 13vh;  
+    overflow-y: auto;  
+    height: 100vh;  
+    padding-left: 20px;  
+    padding-right: 20px;  
 }
 
-/* Optional Scroll Style for Main Content */
 .main-content::-webkit-scrollbar {
     width: 8px;
 }

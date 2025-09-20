@@ -13,6 +13,8 @@ function ProductProvider({ children }) {
   const [cart, setCart] = useState([]);
   const [itemCounts, setItemCounts] = useState({});
   const [addedProductCount, setAddedProductCount] = useState(0);
+  const[showCart, setShowCart] = useState(false);
+  const [isCartVisible, setIsCartVisible] = useState(false);
 
   const handleProductClick = (product) => {
     setSelectedProduct(product);
@@ -22,8 +24,12 @@ function ProductProvider({ children }) {
     setCart([...cart, product]);
   };
 
+  const toggleCart = () => {
+    setIsCartVisible((prev) => !prev); 
+  };
+
   const handleCartClick = () => {
-    setSelectedProduct(null); // Clear the product details view
+    setIsCartVisible(true); 
   };
 
   return (
@@ -44,10 +50,17 @@ function ProductProvider({ children }) {
           itemCounts,
           setItemCounts,
           addedProductCount,
-          setAddedProductCount
+          setAddedProductCount,
+          toggleCart,
+          setCart,
+          setShowCart,
+          isCartVisible,
+        setIsCartVisible,
         }}
       >
+        
         {children}
+        {/* {showCart && <Cart />} */}
       </productContext.Provider>
     </div>
   );

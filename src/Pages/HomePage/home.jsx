@@ -10,31 +10,28 @@ function Home() {
 
   return (
     <>
-      {/* {selectedProduct && (
-        <div className={style.productDetails}>
-          <ProductDetails />
-        </div>
-      )} */}
-      {selectedProduct ?(
-          <ProductDetails />
-        )  : (
-         <Cart />
-          
-        )}
-      <div className={style.input}>
-       <h2>Home</h2> 
-        <input
-          type="text"
-          value={searchProduct}
-          onChange={(e) => setSearchProduct(e.target.value)}
-          placeholder="Search a product"
-        />
-      </div>
-      <div className={style.homeContainer}>
-        <div className={style.productContainer}>
-          <div className={style.productList}>
-            <Product />
+      <div className={style.pageContainer}>
+        <div className={style.leftContent}>
+          <div className={style.input}>
+            <h2>Home</h2>
+            <input
+              type="text"
+              value={searchProduct}
+              onChange={(e) => setSearchProduct(e.target.value)}
+              placeholder="Search a product"
+            />
           </div>
+          <div className={style.homeContainer}>
+            <div className={style.productContainer}>
+              <div className={style.productList}>
+                <Product />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className={style.rightContent}>
+          {selectedProduct ? <ProductDetails /> : <Cart />}
         </div>
       </div>
     </>

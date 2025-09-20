@@ -1,46 +1,41 @@
-/* .input h2
-{
-    font-size: large;
-    font-weight: 400;
-}
-.input input{
-    width: 25vw;
-    height: 9vh;
-    border-radius: 7px;
-    border: 1px solid black;
-} */
 
+
+   .pageContainer {
+  display: flex;
+  gap: 30px;
+  /* padding: 20px; */
+}
+
+
+.leftContent {
+  flex: 2;
+}
+
+.rightContent {
+  flex: 1;
+}
+
+.rightContent {
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
+}
+
+.input {
+  margin-bottom: 20px;
+}
 
 .homeContainer {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .input {
-    width: 100%;
-    margin-bottom: 20px;
-    margin-top: 78px;
-  }
-  
-  .input input {
-    width: 30%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .productList {
-    flex: 1;
-    /* Adjust the flex value to ensure the list takes up remaining space */
-  }
-  
-  
-  
-  .productContainer {
-    display: flex;
-    gap: 20px;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.productContainer {
+  width: 100%;
+}
+
+.productList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}

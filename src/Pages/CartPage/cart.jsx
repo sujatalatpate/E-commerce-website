@@ -4,22 +4,19 @@ import style from "./cart.module.css";
 import { Link, useNavigate } from "react-router-dom";
 
 function Cart() {
-  const { cart, setCart, itemCounts, setItemCounts } = useProduct();
-  const [isCartVisible, setIsCartVisible] = useState(true);
+  const { cart, setCart, itemCounts, setItemCounts, isCartVisible,setIsCartVisible } = useProduct();
   const navigate = useNavigate();
 
-  // Update itemCounts whenever cart changes
   useEffect(() => {
     const initialItemCounts = cart.reduce(
       (acc, item) => {
-        // Set initial counts, but retain previous counts if the item already exists
         if (!acc[item.id]) {
-          acc[item.id] = 1; // Default to 1 if item doesn't exist yet
+          acc[item.id] = 1; 
         }
         return acc;
       },
       { ...itemCounts }
-    ); // Merge with current itemCounts to persist old quantities
+    ); 
     setItemCounts(initialItemCounts);
   }, [cart]);
 
@@ -44,18 +41,18 @@ function Cart() {
   const handleRemoveItem = (id) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== id));
 
-    // Remove item count state
+   
     setItemCounts((prevCounts) => {
       const newCounts = { ...prevCounts };
-      delete newCounts[id]; // Remove item count for the removed product
+      delete newCounts[id]; 
       return newCounts;
     });
   };
 
-  // Calculate the total price of items in the cart
+  
   const calculateTotalPrice = () => {
     return cart.reduce((total, item) => {
-      const quantity = itemCounts[item.id] || 1; // Fallback to 1 if undefined
+      const quantity = itemCounts[item.id] || 1; 
       return total + item.price * quantity;
     }, 0);
   };
@@ -63,12 +60,11 @@ function Cart() {
   const handleCheckout = (e) => {
     e.preventDefault();
 
-    // Store the cart and itemCounts data in localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
     localStorage.setItem('itemCounts', JSON.stringify(itemCounts));
 
     console.log("Navigating to Order Page...");
-    navigate('/order'); // Programmatically navigate to the OrderPage
+    navigate('/order'); 
   };
 
   return (
@@ -82,7 +78,7 @@ function Cart() {
                 src="https://cdn-icons-png.flaticon.com/128/9248/9248474.png"
                 alt="close"
               />
-            </div>
+          </div>
           </div>
           <div className={style.container}>
             <div>
@@ -93,10 +89,10 @@ function Cart() {
                       <img src={item.images} width="85px" height="100px" />
                     </div>
                     <div>
-                      <p style={{ fontSize: "12px", marginLeft: "15px" }}>
+                      <p style={{ fontSize: "17px", marginLeft: "15px" }}>
                         {item.title}
                       </p>
-                      <p>${item.price}</p>
+                      <p style={{fontSize: "17px"}}>${item.price}</p>
                       <div className={style.count}>
                         <div
                           onClick={() => handleCountDec(item.id)}
@@ -110,7 +106,6 @@ function Cart() {
                         </div>
                         <div className={style.counter}>
                           {itemCounts[item.id] || 1}{" "}
-                          {/* Fallback to 1 if undefined */}
                         </div>
                         <div
                           onClick={() => handleCountInc(item.id)}
@@ -128,7 +123,7 @@ function Cart() {
                       <img
                         src="https://cdn-icons-png.flaticon.com/128/9248/9248474.png"
                         alt="remove"
-                        onClick={() => handleRemoveItem(item.id)} // Remove the item when clicked
+                        onClick={() => handleRemoveItem(item.id)} 
                       />
                     </div>
                   </div>
@@ -151,6 +146,7 @@ function Cart() {
           </div>
         </div>
       )}
+      
     </div>
   );
 }

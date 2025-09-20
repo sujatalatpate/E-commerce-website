@@ -1,78 +1,53 @@
-/* Navbar Style */
+
 .navContainer {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  height: 13vh;
-  border-bottom: 1px solid black;
-  padding-left: 50px;
-  padding-right: 50px;
-  position: fixed; /* Make the navbar fixed at the top */
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 100%;
-  background-color: white; /* Optional: Add a background to make the navbar stand out */
-  z-index: 9999; /* Ensure it stays on top */
+  z-index: 1000;
 }
 
-/* Left side of the navbar */
-.leftPart {
+.leftPart, .rightPart {
   display: flex;
-  justify-content: space-around;
-  width: 40vw; /* Default width for larger screens */
-  margin-top: 10px;
-  margin-bottom: 10px;
+  align-items: center;
+  gap: 20px;
+}
+.linkText
+{
+  text-decoration: none; 
+  color: inherit;        
+}
+.right{
+  text-decoration: none;  
+  color: inherit;
 }
 
-/* Right side of the navbar */
-.rightPart {
-  display: flex;
-  justify-content: space-evenly;
-  width: 30vw; /* Default width for larger screens */
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-right: 10px;
+
+.leftPart p:first-child {
+  font-weight: bold;
+  font-size: 20px;
 }
 
-/* Image in the right part of the navbar */
 .rightPart img {
-  width: 25px;
-  height: 25px;
-  margin-top: 10px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
 }
 
-/* Media query for screens smaller than 766px */
-@media screen and (max-width: 766px) {
-  /* Hide the right part (icons) */
-  .rightPart {
-    display: none;
-  }
+input[type="text"] {
+  max-width: 250px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 
-  /* Add a container for the account icon */
-  .accountIcon {
-    display: block;
-    width: 25px;
-    height: 25px;
-    margin-top: 10px;
-    cursor: pointer; /* Make it clickable if needed */
-  }
-
-  /* Adjust the left part width on smaller screens */
-  .leftPart {
-    width: auto; /* Let it adjust to content */
-    justify-content: center; /* Center the left side items */
-  }
-
-  /* Ensure the account icon is visible */
-  .navContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  /* Optional: To limit the maximum width of the navbar on smaller screens */
-  .navContainer {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+.rightPart p:last-child {
+  font-weight: bold;
+  color: #333;
+  min-width: 20px;
+  text-align: center;
 }

@@ -31,7 +31,8 @@
 .imageGallery {
   display: flex;
   flex-wrap: wrap;
-  margin-left: 60px;
+  /* margin-left: 50px; */
+  width:90vw
 }
 
 .imageItem {
@@ -43,14 +44,14 @@
   
 }
 .imageItem img {
-  width: 230px;
+  width: 260px;
   border-radius: 10px;
   
 }
 
 .image {
-  width: 200px;
-  height: 200px;
+  width: 390px;
+  height: 270px;
   object-fit: cover;
 }
 .add {
@@ -70,7 +71,7 @@
 }
 .name {
   position: absolute;
-  top: 160px; /* Positioning it at the top-right corner */
+  top: 220px; 
   left: 2px;
   background: rgba(243, 239, 239, 0.5);
   color: black;
@@ -85,9 +86,6 @@
   z-index: 10;
 }
 
-/* product.module.css */
-
-/* Styles for icon images */
 .iconImage {
   width: 20px;
   height: 20px;
@@ -97,7 +95,6 @@
 }
 
 .add {
-  /* Button styles */
   background: transparent;
   border: none;
   cursor: pointer;
@@ -105,7 +102,6 @@
 }
 
 .name {
-  /* Product name styling */
   background: transparent;
   border: none;
   font-size: 14px;
@@ -113,8 +109,6 @@
 }
 
 
-
-/* Image gallery */
 .imageGallery {
   display: flex;
   flex-wrap: wrap;
@@ -122,7 +116,6 @@
   justify-content: space-around;
 }
 
-/* Optional: Styling for the "plus" and "check" icon */
 .icon {
   display: flex;
   justify-content: center;

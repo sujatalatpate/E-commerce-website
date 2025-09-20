@@ -7,7 +7,6 @@ function OrderPage() {
   const [itemCounts, setItemCounts] = useState({});
 
   useEffect(() => {
-    // Get cart and itemCounts from localStorage
     const storedCart = JSON.parse(localStorage.getItem("cart"));
     const storedItemCounts = JSON.parse(localStorage.getItem("itemCounts"));
 
@@ -17,7 +16,6 @@ function OrderPage() {
     }
   }, []);
 
-  // Calculate the total price
   const calculateTotalPrice = () => {
     return cart.reduce((total, item) => {
       const quantity = itemCounts[item.id] || 1;
