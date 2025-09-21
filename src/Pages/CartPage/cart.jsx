@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import {  useEffect } from "react";
 import { useProduct } from "../../context.js/productContext";
 import style from "./cart.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Cart() {
   const { cart, setCart, itemCounts, setItemCounts, isCartVisible,setIsCartVisible } = useProduct();

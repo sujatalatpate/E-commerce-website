@@ -1,6 +1,5 @@
 import { createContext } from "react";
 import { useContext, useState } from "react";
-import Cart from "../Pages/CartPage/cart";
 
 const productContext = createContext();
 // const useProduct = useContext(productContext);
@@ -52,7 +51,6 @@ function ProductProvider({ children }) {
           addedProductCount,
           setAddedProductCount,
           toggleCart,
-          setCart,
           setShowCart,
           isCartVisible,
         setIsCartVisible,

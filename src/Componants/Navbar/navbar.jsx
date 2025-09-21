@@ -4,7 +4,7 @@ import { useProduct } from "../../context.js/productContext";
 import style from "./navbar.module.css";
 
 function Navbar() {
-  const {handleCartClick,addedProductCount, toggleCart, } = useProduct();
+  const {addedProductCount, toggleCart, } = useProduct();
   return (
     <>
     <div className={style.navContainer}>
@@ -20,7 +20,7 @@ function Navbar() {
       <Link to="/order" className={style.right}>My Orders</Link>
         <p>My Account</p>
         <div onClick={toggleCart}>
-       <img src="https://cdn-icons-png.flaticon.com/128/3514/3514491.png" /> 
+       <img src="https://cdn-icons-png.flaticon.com/128/3514/3514491.png" alt="image" /> 
         </div>
         <p>{addedProductCount}</p>
       </div>

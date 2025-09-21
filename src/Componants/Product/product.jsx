@@ -12,8 +12,6 @@ function Product() {
     handleAddToCart,
     setAddedProductCount,
     addedProductCount,
-    setShowCart,
-    isCartVisible,
         setIsCartVisible,
   } = useProduct();
   const { categoryName } = useParams();

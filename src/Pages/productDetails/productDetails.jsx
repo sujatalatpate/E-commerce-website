@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 import { useProduct } from "../../context.js/productContext";
 import style from "./productDetails.module.css";
 
@@ -10,7 +10,7 @@ function ProductDetails() {
       <div className={style.top}>
         <p>Details</p>
         <div onClick={handleCartClick}>
-          <img src="https://cdn-icons-png.flaticon.com/128/9248/9248474.png" />
+          <img src="https://cdn-icons-png.flaticon.com/128/9248/9248474.png" alt="image"/>
         </div>
       </div>
 

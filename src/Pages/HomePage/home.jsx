@@ -3,7 +3,6 @@ import Product from "../../Componants/Product/product";
 import ProductDetails from "../productDetails/productDetails";
 import { useProduct } from "../../context.js/productContext";
 import Cart from "../CartPage/cart";
-import { Link } from "react-router-dom";
 
 function Home() {
   const { searchProduct, setSearchProduct, selectedProduct } = useProduct();
